@@ -1,13 +1,13 @@
 <?php
 
- $name = $_POST['username'];
- $msg = $_POST['msg'];
- $email = $_POST['email'];
- $phone = $_POST['phone'];
+ $name = $_POST['sname'];
+ $msg = $_POST['saddress'];
+ $email = $_POST['sclass'];
+ $phone = $_POST['sphone'];
 
-$conn = mysqli_connect("localhost","root","","realestate") or die("Connection Failed");
+$conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
 
-$sql = "INSERT INTO contact(username,msg,email,phone) VALUES ('{$name}','{$msg}','{$email}','{$phone}')";
+$sql = "INSERT INTO student(sname,saddress,sclass,sphone) VALUES ('{$name}','{$msg}','{$email}','{$phone}')";
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
 header("Location: http://localhost/crud/index.php");
